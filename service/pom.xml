@@ -38,6 +38,25 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-core</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+
+        <!--easy rule-->
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-core</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-mvel</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
+        <!--elastic-->
+        <dependency>
             <groupId>org.nlpcn</groupId>
             <artifactId>elasticsearch-sql</artifactId>
             <version>6.3.0.0</version>
