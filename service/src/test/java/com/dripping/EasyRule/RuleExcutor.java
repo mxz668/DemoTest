@@ -1,11 +1,9 @@
 package com.dripping.EasyRule;
 
-import com.dripping.service.EasyRule.EightCheckRule;
-import com.dripping.service.EasyRule.OtherCheckRule;
-import com.dripping.service.EasyRule.SixCheckRule;
-import com.dripping.service.EasyRule.SixEightUnitGroupRule;
+import com.dripping.service.EasyRule.*;
+import com.dripping.service.EasyRule.regular.JudgeIpRule;
+import com.dripping.service.EasyRule.regular.RegularRule;
 import org.jeasy.rules.api.Facts;
-import org.jeasy.rules.api.Rule;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;
 import org.jeasy.rules.api.RulesEngineParameters;
@@ -14,7 +12,6 @@ import org.jeasy.rules.mvel.MVELRuleFactory;
 import org.jeasy.rules.support.reader.YamlRuleDefinitionReader;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 /**
@@ -61,5 +58,25 @@ public class RuleExcutor {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void regularRule(){
+        RulesEngine rulesEngine = new DefaultRulesEngine();
+        Rules rules = new Rules();
+        rules.register(new RegularRule());
+        Facts facts = new Facts();
+        facts.put("content","是正则");
+        rulesEngine.fire(rules,facts);
+    }
+
+    @Test
+    public void judgeIp(){
+        RulesEngine rulesEngine = new DefaultRulesEngine();
+        Rules rules = new Rules();
+        rules.register(new JudgeIpRule());
+        Facts facts = new Facts();
+        facts.put("content","!254.254.254.254 127.0.0.1localhost192.168.2.1localhost");
+        rulesEngine.fire(rules,facts);
     }
 }
