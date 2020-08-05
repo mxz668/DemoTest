@@ -1,10 +1,5 @@
 package com.dripping.controller;
 
-import com.dripping.service.elastic.ElasticSearchSqlService;
-import com.dripping.service.elastic.EsResult;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class EsController {
 
 
-
-    @PostMapping("/search")
-    public EsResult search(@RequestBody String sql){
-        String[] hosts = new String[]{"10.108.3.115:9300"};
-        ElasticSearchSqlService searchSqlService = new ElasticSearchSqlService();
-        return searchSqlService.search(sql,hosts);
-    }
+//
+//    @PostMapping("/search")
+//    public EsResult search(@RequestBody String sql){
+//        String[] hosts = new String[]{"10.108.3.115:9300"};
+//        ElasticSearchSqlService searchSqlService = new ElasticSearchSqlService();
+//        return searchSqlService.search(sql,hosts);
+//    }
 }
