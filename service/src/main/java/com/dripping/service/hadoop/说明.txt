@@ -1,0 +1,2 @@
+windows 下启动
+Hadoop/bin  下要有对应的 winutils.exe和hadoop.dll,windows/system32下也要有 hadoop.dll
